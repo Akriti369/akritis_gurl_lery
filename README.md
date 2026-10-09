@@ -18,17 +18,22 @@ A personal photo gallery created to preserve little moments and memories. The we
 - HTML5
 - CSS3
 - JavaScript
-
+- 
 ## 📁 Project Structure
+
+```text
 akritis-gurl-lery/
 ├── index.html
 ├── style.css
 ├── script.js
-└──
-    ├── img1.jpg
-    ├── img2.jpg
-    └── akriti'sgallery.png
-    └── ...
+├── README.md
+├── akriti'sgallery.png
+├── img1.png
+├── img2.png
+├── img3.png
+├── img4.png
+└── img5.png
+```
 ## ♡ Preview
 ![Akriti's Gurl_Lery Preview](akriti'sgallery.png)
 
