@@ -24,14 +24,13 @@ akritis-gurl-lery/
 ├── index.html
 ├── style.css
 ├── script.js
-├── img/
-│   └── akriti'sgallery.png
-└── photos/
+└──
     ├── img1.jpg
     ├── img2.jpg
+    └── akriti'sgallery.png
     └── ...
 ## ♡ Preview
-![Akriti's Gurl_Lery Preview](img/akriti%27sgallery.png)
+![Akriti's Gurl_Lery Preview](akriti'sgallery.png)
 
 ## 🚀 How to Run
 
