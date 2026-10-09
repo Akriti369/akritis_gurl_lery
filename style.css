@@ -1,0 +1,583 @@
+
+/* =================================
+   1. GLOBAL STYLING
+================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Noto+Serif+Devanagari:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background:
+        radial-gradient(
+            ellipse at 5% 12%,
+            rgba(173, 216, 250, 0.30),
+            transparent 25%
+        ),
+        radial-gradient(
+            ellipse at 95% 35%,
+            rgba(198, 225, 255, 0.35),
+            transparent 24%
+        ),
+        radial-gradient(
+            ellipse at 10% 85%,
+            rgba(190, 222, 250, 0.28),
+            transparent 22%
+        ),
+        #ffffff;
+
+    color: #343b49;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+
+/* =================================
+   2. CORNER SQUIRRELS
+================================= */
+
+.squirrel {
+    position: fixed;
+    z-index: 10;
+    font-size: 52px;
+    pointer-events: none;
+    animation: float 4s ease-in-out infinite;
+    filter: drop-shadow(0 4px 5px rgba(80, 120, 160, 0.12));
+}
+
+.top-left {
+    top: 15px;
+    left: 15px;
+    transform: rotate(-15deg);
+}
+
+.top-right {
+    top: 15px;
+    right: 15px;
+    transform: scaleX(-1);
+    animation-delay: 0.5s;
+}
+
+.bottom-left {
+    bottom: 15px;
+    left: 15px;
+    transform: scaleX(-1);
+    animation-delay: 1s;
+}
+
+.bottom-right {
+    bottom: 15px;
+    right: 15px;
+    transform: scaleX(-1);
+    animation-delay: 1.5s;
+}
+
+@keyframes float {
+    0%, 100% {
+        translate: 0 0;
+    }
+
+    50% {
+        translate: 0 -7px;
+    }
+}
+
+
+/* =================================
+   3. TOP HEADER
+================================= */
+
+.topline {
+    text-align: center;
+    padding: 30px 15px 15px;
+
+    color: #7898bb;
+    font-size: 10px;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+
+/* =================================
+   4. MAIN CONTAINER
+================================= */
+
+.container {
+    width: 88%;
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+
+/* =================================
+   5. HERO SECTION
+================================= */
+
+.hero {
+    text-align: center;
+    padding: 65px 15px 75px;
+    position: relative;
+}
+
+/* Main title */
+
+.hero h1 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(40px, 7vw, 82px);
+    font-weight: 500;
+    letter-spacing: -2px;
+    line-height: 1.2;
+
+    color: #303b4b;
+    text-align: center;
+}
+
+.hero h1 span {
+    color: #8bbce8;
+}
+
+/* Description */
+
+.description {
+    color: #8491a1;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    line-height: 1.8;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Hindi quote */
+
+.hindi-quote {
+    font-family: "Noto Serif Devanagari", serif;
+
+    font-size: clamp(19px, 3vw, 29px);
+    font-weight: 500;
+    line-height: 1.9;
+
+    color: #668db7;
+    text-align: center;
+
+    margin: 32px auto 0;
+    max-width: 100%;
+}
+
+/* Blue underline */
+
+.underline {
+    width: 65px;
+    height: 3px;
+
+    background: linear-gradient(
+        90deg,
+        #c8e5ff,
+        #80b9ec,
+        #c8e5ff
+    );
+
+    border-radius: 20px;
+    margin: 18px auto 0;
+}
+
+
+/* =================================
+   6. GALLERY HEADING
+================================= */
+
+.gallery-section {
+    padding-bottom: 25px;
+}
+
+.count {
+    color: #7ba5ce;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    white-space: nowrap;
+    padding-bottom: 4px;
+}
+
+
+/* =================================
+   7. PHOTO GALLERY GRID
+================================= */
+
+.gallery {
+    columns: 3;
+    column-gap: 20px;
+}
+
+.photo-card {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+
+    margin-bottom: 20px;
+    overflow: hidden;
+
+    background: #f1f7fd;
+    border: 1px solid #e5eff9;
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    break-inside: avoid;
+
+    box-shadow: 0 5px 18px rgba(100, 145, 190, 0.06);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.photo-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+
+    transition:
+        transform 0.6s ease,
+        filter 0.4s ease;
+}
+
+/* Different photo proportions */
+
+.photo-card:nth-child(3n + 1) img {
+    aspect-ratio: 4 / 5;
+}
+
+.photo-card:nth-child(3n + 2) img {
+    aspect-ratio: 4 / 3;
+}
+
+.photo-card:nth-child(3n) img {
+    aspect-ratio: 3 / 4;
+}
+
+/* Hover effects */
+
+.photo-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(100, 145, 190, 0.15);
+}
+
+.photo-card:hover img {
+    transform: scale(1.055);
+    filter: brightness(0.84);
+}
+
+
+/* =================================
+   8. PHOTO CAPTIONS
+================================= */
+
+.photo-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    padding: 35px 15px 15px;
+
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 18px;
+    color: white;
+
+    background: linear-gradient(
+        transparent,
+        rgba(32, 49, 70, 0.72)
+    );
+
+    opacity: 0;
+    transform: translateY(8px);
+
+    transition: all 0.3s ease;
+}
+
+.photo-card:hover .photo-caption {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =================================
+   9. FOOTER
+================================= */
+
+footer {
+    text-align: center;
+
+    border-top: 1px solid #e3edf7;
+
+    padding: 40px 15px 70px;
+    margin-top: 45px;
+}
+
+.footer-heart {
+    display: block;
+    color: #8bbce8;
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+footer p {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 20px;
+    font-style: italic;
+
+    color: #667b94;
+    margin-bottom: 15px;
+}
+
+.footer-credit {
+    display: block;
+
+    color: #8aa9c9;
+    font-size: 10px;
+    letter-spacing: 2px;
+    line-height: 1.8;
+}
+
+
+/* =================================
+   10. TABLET RESPONSIVENESS
+================================= */
+
+@media (max-width: 800px) {
+    .container {
+        width: 90%;
+    }
+
+    .gallery {
+        columns: 2;
+        column-gap: 14px;
+    }
+
+    .photo-card {
+        margin-bottom: 14px;
+    }
+
+    .photo-caption {
+        font-size: 16px;
+    }
+}
+
+
+/* =================================
+   11. MOBILE RESPONSIVENESS
+================================= */
+
+@media (max-width: 480px) {
+    .container {
+        width: 90%;
+    }
+
+    .squirrel {
+        font-size: 34px;
+    }
+
+    .top-left {
+        top: 5px;
+        left: 5px;
+    }
+
+    .top-right {
+        top: 5px;
+        right: 5px;
+    }
+
+    .bottom-left {
+        bottom: 5px;
+        left: 5px;
+    }
+
+    .bottom-right {
+        bottom: 5px;
+        right: 5px;
+    }
+
+    .topline {
+        font-size: 8px;
+        letter-spacing: 1.5px;
+    }
+
+    .hero {
+        padding: 50px 0 55px;
+    }
+
+    .hero h1 {
+        letter-spacing: -1.5px;
+    }
+
+    .hindi-quote {
+        font-size: 19px;
+        line-height: 2;
+        margin-top: 25px;
+    }
+
+    .section-heading {
+        align-items: start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .gallery {
+        columns: 2;
+        column-gap: 9px;
+    }
+
+    .photo-card {
+        margin-bottom: 9px;
+    }
+
+    .photo-card img {
+        min-height: 140px;
+    }
+
+    /* Keep captions visible on phones */
+
+    .photo-caption {
+        opacity: 1;
+        transform: none;
+
+        font-size: 13px;
+        padding: 28px 8px 9px;
+    }
+
+    footer p {
+        font-size: 17px;
+    }
+}
+
+
+/* =================================
+   12. ACCESSIBILITY
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* FULLSCREEN PHOTO VIEWER */
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+
+    background:  rgba(255, 253, 248, 0.96);
+    backdrop-filter: blur(12px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 60px 8%;
+}
+
+.lightbox[hidden] {
+    display: none;
+}
+
+.lightbox-content {
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+}
+
+.lightbox-image {
+    max-width: 100%;
+    max-height: 72vh;
+    object-fit: contain;
+
+    box-shadow: 0 15px 45px rgba(70, 100, 140, 0.15);
+}
+
+.lightbox-caption {
+    font-family: "Playfair Display", Georgia, serif;
+    color: #668db7;
+    font-size: 22px;
+    margin-top: 18px;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+
+    width: 44px;
+    height: 44px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid #dce9f6;
+    border-radius: 50%;
+
+    background:lightpink;
+    color: #668db7;
+
+    font-size: 22px;
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background: #e7f2ff;
+    transform: scale(1.08);
+}
+
+.lightbox-close {
+    top: 25px;
+    right: 25px;
+}
+
+.lightbox-prev {
+    left: 25px;
+}
+
+.lightbox-next {
+    right: 25px;
+}
+
+@media (max-width: 600px) {
+    .lightbox {
+        padding: 50px 15px;
+    }
+
+    .lightbox-image {
+        max-height: 65vh;
+    }
+
+    .lightbox-prev {
+        left: 10px;
+    }
+
+    .lightbox-next {
+        right: 10px;
+    }
+
+    .lightbox-caption {
+        font-size: 18px;
+    }
+}
